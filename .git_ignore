@@ -1,0 +1,31 @@
+dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+build output
+/build
+/dist
+/out
+
+misc
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+pnpm-error.log*
+.DS_Store
+*.seed
+
+optional: test output
+/coverage
+
+editor files
+.idea
+.vscode
