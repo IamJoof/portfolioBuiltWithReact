@@ -27,7 +27,7 @@ const About = () => {
                     </div>
                     <div className='about-image'>
                         <div className='image-placeholder'>
-                            <img src="./src/assets/profile.jpg" alt="John Fred Macapaz" className="profile-image" />
+                            <img src="/profile.jpg" alt="John Fred Macapaz" className="profile-image" />
                         </div>
                     </div>
                 </div>
