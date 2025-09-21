@@ -1,14 +1,14 @@
-dependencies
+# dependencies
 /node_modules
 /.pnp
 .pnp.js
 
-build output
+# build output
 /build
 /dist
 /out
 
-misc
+# misc
 .env
 .env.local
 .env.development.local
@@ -23,9 +23,9 @@ pnpm-error.log*
 .DS_Store
 *.seed
 
-optional: test output
+# optional: test output
 /coverage
 
-editor files
+# editor files
 .idea
 .vscode
