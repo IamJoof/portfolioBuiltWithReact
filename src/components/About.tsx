@@ -12,7 +12,7 @@ const About = () => {
                             I am currently a 4th year student taking up Bachelor of Science in Information Technology at Cebu Technological University - Danao Campus.
                         </p>
                         <p>
-                            I am a self-taught web developer, currently learning about web development. {!showMore && <span className="muted">(click read more)</span>}
+                            I am a self-taught web developer guided by wonderful mentors, currently learning about web development. {!showMore && <span className="muted">(click read more)</span>}
                         </p>
                         {showMore && (
                             <>
