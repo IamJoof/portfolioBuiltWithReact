@@ -38,7 +38,7 @@ const Education: React.FC = () => {
     },
     {
       id: 'elementary',
-      degree: 'Elementary',
+      degree: 'Primary Education (Elementary)',
       institution: 'University of Southern Philippines Foundation',
       period: '2002 - 2008',
       description: 'Cultivated fundamental skills in reading, writing, and arithmetic, which are essential for all future learning. The curriculum focused on core subjects including Filipino, English, Mathematics, and Science, providing a strong foundation for both academic and personal growth.',

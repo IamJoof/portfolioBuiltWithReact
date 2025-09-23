@@ -10,17 +10,14 @@ const Header: React.FC<HeaderProps> = ({ firstName, lastName }) => {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState('');
 
-    // Handle scroll effects
     useEffect(() => {
         const handleScroll = () => {
             const offset = window.scrollY;
             setScrolled(offset > 50);
 
-            // Update active section based on scroll position
             const sections = ['about', 'education', 'projects', 'tech-stack', 'contact'];
             let currentSection = '';
             
-            // Find the section that is most visible in the viewport
             let maxVisibility = 0;
             
             sections.forEach(section => {
@@ -31,18 +28,15 @@ const Header: React.FC<HeaderProps> = ({ firstName, lastName }) => {
                     const visible = Math.min(rect.bottom, window.innerHeight) - 
                                  Math.max(rect.top, 0);
                     
-                    // Calculate how much of the section is visible as a percentage
                     const visibility = visible > 0 ? (visible / total) : 0;
                     
-                    // If this section is more visible than previous sections
-                    if (visibility > maxVisibility && visibility > 0.3) { // At least 30% visible
+                    if (visibility > maxVisibility && visibility > 0.3) { 
                         maxVisibility = visibility;
                         currentSection = section;
                     }
                 }
             });
             
-            // Only update if we found a section or if we need to clear the active section
             if (currentSection !== activeSection) {
                 setActiveSection(currentSection);
             }
@@ -95,7 +89,7 @@ const Header: React.FC<HeaderProps> = ({ firstName, lastName }) => {
             <div className="container header-inner">
                 <h1 className="brand-name">
                     {firstName} {lastName}
-                    <em>.</em>
+                    <em> .</em>
                 </h1>
                 
                 <button 
