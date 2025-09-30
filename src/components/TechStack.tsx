@@ -6,7 +6,6 @@ interface TechStack {
   icon?: string;
   color: string;
   description: string;
-  proficiency: number; // 1-100
 }
 
 const TechStack: React.FC = () => {
@@ -23,28 +22,24 @@ const TechStack: React.FC = () => {
       category: 'Frontend', 
       color: '#61DAFB',
       description: 'A JavaScript library for building user interfaces with component-based architecture.',
-      proficiency: 63
     },
     { 
       name: 'TypeScript', 
       category: 'Frontend', 
       color: '#3178C6',
       description: 'Typed superset of JavaScript that compiles to plain JavaScript.',
-      proficiency: 58
     },
     { 
       name: 'JavaScript', 
       category: 'Frontend', 
       color: '#F7DF1E',
       description: 'Dynamic programming language for web development and interactive user interfaces.',
-      proficiency: 95
     },
     { 
       name: 'Tailwind CSS', 
       category: 'Frontend', 
       color: '#06B6D4',
       description: 'Utility-first CSS framework for rapidly building custom user interfaces.',
-      proficiency: 88
     },
     // Backend
     { 
@@ -52,21 +47,18 @@ const TechStack: React.FC = () => {
       category: 'Backend', 
       color: '#FF2D20',
       description: 'PHP web application framework with expressive, elegant syntax.',
-      proficiency: 92
     },
     { 
       name: 'PHP', 
       category: 'Backend', 
       color: '#777BB4',
       description: 'Server-side scripting language designed for web development.',
-      proficiency: 90
     },
     { 
       name: 'Java', 
       category: 'Backend', 
       color: '#ED8B00',
       description: 'Object-oriented programming language for enterprise applications.',
-      proficiency: 67
     },
 
     // Database
@@ -75,7 +67,6 @@ const TechStack: React.FC = () => {
       category: 'Database', 
       color: '#4479A1',
       description: 'Open-source relational database management system. Popular database utilized by industries aside from MongoDB',
-      proficiency: 85
     },
 
     // Tools
@@ -84,28 +75,24 @@ const TechStack: React.FC = () => {
       category: 'Tools', 
       color: '#F05032',
       description: 'Distributed version control system for tracking changes in source code.',
-      proficiency: 88
     },
     { 
       name: 'GitHub', 
       category: 'Tools', 
       color: '#181717',
       description: 'Web-based platform for version control and collaboration.',
-      proficiency: 85
     },
     { 
       name: 'VS Code', 
       category: 'Tools', 
       color: '#007ACC',
       description: 'Lightweight but powerful source code editor with rich ecosystem.',
-      proficiency: 95
     },
     { 
       name: 'Postman', 
       category: 'Tools', 
       color: '#FF6C37',
       description: 'API platform for building and using APIs with testing capabilities.',
-      proficiency: 82
     },
   ];
 
@@ -174,13 +161,7 @@ const TechStack: React.FC = () => {
     setSelectedTech(null);
   };
 
-  // Get proficiency color
-  const getProficiencyColor = (proficiency: number) => {
-    if (proficiency >= 90) return '#10B981'; // Green
-    if (proficiency >= 80) return '#FACC15'; // Yellow
-    if (proficiency >= 70) return '#F97316'; // Orange
-    return '#EF4444'; // Red
-  };
+
 
   return (
     <section 
@@ -420,13 +401,6 @@ const TechStack: React.FC = () => {
                   overflow: 'hidden',
                   position: 'relative'
                 }}>
-                  <div style={{
-                    width: `${tech.proficiency}%`,
-                    height: '100%',
-                    background: `linear-gradient(90deg, ${getProficiencyColor(tech.proficiency)}, ${getProficiencyColor(tech.proficiency)}CC)`,
-                    borderRadius: '2px',
-                    transition: 'width 1s ease-out 0.5s'
-                  }}></div>
                 </div>
 
                 {/* Category Badge */}
@@ -573,13 +547,6 @@ const TechStack: React.FC = () => {
                 alignItems: 'center',
                 marginBottom: '0.5rem'
               }}>
-                <span style={{ color: 'white', fontWeight: '600' }}>Proficiency</span>
-                <span style={{ 
-                  color: getProficiencyColor(selectedTech.proficiency), 
-                  fontWeight: 'bold' 
-                }}>
-                  {selectedTech.proficiency}%
-                </span>
               </div>
               
               <div style={{
@@ -589,13 +556,6 @@ const TechStack: React.FC = () => {
                 borderRadius: '4px',
                 overflow: 'hidden'
               }}>
-                <div style={{
-                  width: `${selectedTech.proficiency}%`,
-                  height: '100%',
-                  background: `linear-gradient(90deg, ${getProficiencyColor(selectedTech.proficiency)}, ${getProficiencyColor(selectedTech.proficiency)}CC)`,
-                  borderRadius: '4px',
-                  animation: 'proficiencyFill 1s ease-out'
-                }}></div>
               </div>
             </div>
           </div>
@@ -629,11 +589,6 @@ const TechStack: React.FC = () => {
             opacity: 1;
             transform: scale(1) translateY(0);
           }
-        }
-        
-        @keyframes proficiencyFill {
-          from { width: 0%; }
-          to { width: ${selectedTech?.proficiency || 0}%; }
         }
         
         .tech-card:hover::before {
