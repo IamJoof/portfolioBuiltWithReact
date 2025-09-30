@@ -257,7 +257,7 @@ const Contact: React.FC = () => {
                   <div>
                     <p style={{ color: '#D1D5DB', fontSize: '0.875rem', margin: 0 }}>Email</p>
                     <p style={{ color: 'white', fontSize: '1rem', fontWeight: '600', margin: 0 }}>
-                      jfmacapaz@gmail.com
+                      jofmacapaz@gmail.com
                     </p>
                   </div>
                 </div>
@@ -474,7 +474,7 @@ const Contact: React.FC = () => {
                       outline: 'none',
                       boxSizing: 'border-box'
                     }}
-                    placeholder="Your Name"
+                    placeholder={formData.name || focusedField === 'name' ? '' : 'Full Name'}
                   />
                   <label style={{
                     position: 'absolute',
@@ -513,7 +513,7 @@ const Contact: React.FC = () => {
                       outline: 'none',
                       boxSizing: 'border-box'
                     }}
-                    placeholder="Your Email"
+                    placeholder={formData.email || focusedField === 'email' ? '' : 'E-mail Address'}
                   />
                   <label style={{
                     position: 'absolute',
@@ -553,7 +553,7 @@ const Contact: React.FC = () => {
                     outline: 'none',
                     boxSizing: 'border-box'
                   }}
-                  placeholder="Subject"
+                  placeholder={formData.subject || focusedField === 'subject' ? '' : 'Subject'}
                 />
                 <label style={{
                   position: 'absolute',
@@ -595,7 +595,7 @@ const Contact: React.FC = () => {
                     fontFamily: 'inherit',
                     boxSizing: 'border-box'
                   }}
-                  placeholder="Your message..."
+                  placeholder={formData.message || focusedField === 'message' ? '' : 'Your Message here . . .' }
                 />
                 <label style={{
                   position: 'absolute',

@@ -147,6 +147,7 @@ header.scrolled {
 
 /* Mobile styles */
 @media (max-width: 768px) {
+
   .menu-button {
     display: flex;
     margin-left: auto;

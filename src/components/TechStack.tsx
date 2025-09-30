@@ -16,7 +16,6 @@ const TechStack: React.FC = () => {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
   const sectionRef = useRef<HTMLElement>(null);
 
-  // Enhanced tech stack data
   const techStacks: TechStack[] = [
     // Frontend
     { 
@@ -75,7 +74,7 @@ const TechStack: React.FC = () => {
       name: 'MySQL', 
       category: 'Database', 
       color: '#4479A1',
-      description: 'Open-source relational database management system.',
+      description: 'Open-source relational database management system. Popular database utilized by industries aside from MongoDB',
       proficiency: 85
     },
 
@@ -121,6 +120,10 @@ const TechStack: React.FC = () => {
             setTimeout(() => {
               setVisibleItems(prev => new Set([...prev, index]));
             }, index * 100);
+          } else {
+            setTimeout(() => {
+              setVisibleItems(prev => new Set([...prev, index]));
+            }, index * 300);
           }
         });
       },
@@ -491,7 +494,7 @@ const TechStack: React.FC = () => {
                 border: 'none',
                 borderRadius: '50%',
                 width: '40px',
-                height: '40px',
+                height: '60px',
                 color: 'white',
                 cursor: 'pointer',
                 display: 'flex',
