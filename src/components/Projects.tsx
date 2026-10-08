@@ -152,7 +152,8 @@ const Projects: React.FC = () => {
                     gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', // Reduced min-width for mobile
                     gap: 'clamp(1rem, 4vw, 2rem)', // Responsive gap
                     padding: '0', // Remove padding that might cause overflow
-                    width: '100%'
+                    width: '100%',
+                    alignItems: 'stretch'
                 }}>
                     {projectsData.map((project, index) => {
                         const isVisible = visibleProjects.has(project.id);
@@ -172,7 +173,9 @@ const Projects: React.FC = () => {
                                     transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)', // Faster animation for mobile
                                     transitionDelay: isMobile ? `${index * 100}ms` : `${index * 200}ms`, // Faster stagger on mobile
                                     width: '100%', // Ensure full width
-                                    minWidth: 0 // Prevent flex shrinking issues
+                                    minWidth: 0, // Prevent flex shrinking issues
+                                    display: 'flex',
+                                    height: '100%'
                                 }}
                                 onMouseEnter={() => !isMobile && handleMouseEnter(project.id)} // Disable hover on mobile
                                 onMouseLeave={handleMouseLeave}
@@ -187,7 +190,10 @@ const Projects: React.FC = () => {
                                     boxShadow: isHovered && !isMobile
                                         ? '0 25px 50px -12px rgba(0, 0, 0, 0.5)' 
                                         : '0 10px 25px -3px rgba(0, 0, 0, 0.3)',
-                                    width: '100%'
+                                    width: '100%',
+                                    height: '100%',
+                                    display: 'flex',
+                                    flexDirection: 'column'
                                 }}>
                                     {/* Project Image Container */}
                                     <div style={{
@@ -214,7 +220,11 @@ const Projects: React.FC = () => {
                                     <div style={{ 
                                         padding: 'clamp(1rem, 3vw, 1.5rem)', // Responsive padding
                                         width: '100%',
-                                        boxSizing: 'border-box'
+                                        boxSizing: 'border-box',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        flex: 1,
+                                        height: '100%'
                                     }}>
                                         <h3 style={{
                                             fontSize: 'clamp(1.25rem, 4vw, 1.5rem)', // Responsive title size
