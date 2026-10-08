@@ -10,16 +10,16 @@ const About = () => {
                 <div className='about-content'>
                     <div className='about-text'>
                         <p>
-                            I am currently a 4th year student taking up Bachelor of Science in Information Technology at Cebu Technological University - Danao Campus.
+                            I graduated with a Bachelor of Science in Information Technology from Cebu Technological University - Danao Campus.
                         </p>
                         <p>
-                            I am a self-taught web developer guided by wonderful mentors, currently learning about web development. {!showMore && <span className="muted">(click read more)</span>}
+                            I am a junior developer with a passion for building web applications and solving real-world problems. {!showMore && <span className="muted">(click read more)</span>}
                         </p>
                         {showMore && (
                             <>
-                                <p>I enjoy learning new things and I am always eager to take on new challenges.</p>
-                                <p>Building this portfolio is how I learn — step by step.</p>
-                                <p>Always learning until the letter "L" becomes silent.</p>
+                                <p>I enjoy learning new technologies, improving my skills, and contributing to projects that create value.</p>
+                                <p>My goal is to continue growing as a developer through hands-on experience, teamwork, and continuous learning.</p>
+                                <p>I am always open to new challenges and opportunities to improve my craft.</p>
                             </>
                         )}
                         <button className="read-more" onClick={() => setShowMore(!showMore)}>
